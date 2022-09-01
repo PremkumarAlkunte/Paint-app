@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css"
 
-function App() {
+
+
+
+const title = 'Select the gradient and then the Box to change the color';
+
+const Paint = () => {
+  const [color, setcolor]=useState("")
+console.log(color)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <>
+  
+  <div className={color}>
+
+    <h1>{title}</h1>
+    
+  <div className="btn-c">
+
+      <button onClick={()=>setcolor("parent1")}  className="red btn">#f12828</button>
+      <button  onClick={()=>setcolor("parent2")} className="blue btn">#1b25e6</button>
+      <button  onClick={()=>setcolor("parent3")} className="green btn">#4cfc7b</button>
+  </div>
+  </div>
+  
+  </>
+  )
+  
 }
 
-export default App;
+
+export default Paint;
